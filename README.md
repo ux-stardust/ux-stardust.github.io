@@ -1,2 +1,2 @@
-# uxstardust.github.io
+# uxp-stardust.github.io
 깃허브 웹사이트

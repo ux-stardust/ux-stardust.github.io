@@ -1,78 +1,285 @@
 
-/* Navigation */
-.nav{
-  width:100%;
-  border-top:1px solid #222;
-  border-bottom:1px solid #222;
-}
-.gnb{
-  width:800px;
+.tabgroup{
+  position:relative;
+  width:500px;
+  height:250px;
   margin:0 auto;
 }
-.gnb::after{
-  content:"";
-  clear:both;
-  display:block;
-}
+/* type1 - h2 + ul구조 */
+.tabmenu{
 
-/* Depth1 - li */
-.dep1{
+}
+.tabmenu h2{
+  display:inline-block;
   position:relative;
   float:left;
-  width:25%;
-
+  margin-right:-1px;
 }
-.dep1 > a{
+.tabmenu h2 a{
   display:inline-block;
-  width:100%;
-  padding:10px;
-  background-color:#222;
-  color:#fff;
+  min-width:100px;
+  height:40px;
+  padding:10px 10px;
+  border:1px solid #dadada;
+  background-color:#f4f4f4;
   text-align:center;
 }
-/* depth2 - ul */
-.dep2{
-  display:none; /*큰 구조부터 잡고 작은 구조는 나중에 */
-  position:absolute;
-  width:100%;
-  border:1px solid #222;
-  border-top:0;
-}
-
-.dep2 li{
-
-}
-
-.dep2 a{
+.tabmenu ul{
   display:block;
-  padding:10px 5px;
-  border:1px solid #222;
-  border-top:0;
-  border-left:0;
-  border-right:0;
+  position:absolute;
+  top:39px;
+  left:0;
+  width:100%;
+  padding:15px 10px;
+  border-top:1px solid #dadada;
+}
+.tabmenu li{
+  position:relative;
+  padding-left:10px;
+  border-bottom:1px dotted #dadada;
+  /* background:url() no-repeat 0 50%; */
+}
+.tabmenu li::before{
+  content:"";
+  display:inline-block;
+  position:absolute;
+  top:50%;
+  left:0;
+  width:4px;
+  height:4px;
+  background-color:#dadada;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  border-radius:3px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  -ms-border-radius:3px;
+  -o-border-radius:3px;
+}
+.tabmenu li a{
+  overflow:hidden;
+  display:inline-block;
+  max-width:calc(100% - 100px);/* 말줄임표 */
+  padding:8px 0;
+  text-overflow:ellipsis;/* 말줄임표 */
+  white-space:nowrap;/* 한줄로 만듦 */
 }
 
-.dep2 li:last-child a{
-  border-bottom:0;
+/* 컨텐츠 길이에 따라 정 가운데 위치시키는 제일 좋은 방법
+position:absolute;
+top:50%;
+left:50%;
+min-width:500px;
+transform:translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  -moz-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%); 
+ */
+
+.tabmenu li .date{
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  /*transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  하위 브라우저 위해 작성 필요 //확장팩prefix*/
+}
+.tabmenu .more{
+  position:absolute;
+  top:10px;
+  right:5px;
+  display:inline-block;
 }
 
-/* Depth1 - hover */
-.dep1 > a:hover{
-   border:1px solid #222;
+/* 활성화 메뉴 - on */
+.tabmenu.on h2{
+  z-index:1;
+
+}
+.tabmenu.on h2 a{
+  border-color:#222;
+  border-bottom-color:transparent;
   background-color:#fff;
-  color:#222;
   font-weight:bold;
 }
-/* .dep1:hover > a{} 도 가능 */
+.tabmenu.on ul{
+  display:none;
+  position:absolute;
+  top:39px;
+  left:0;
+  width:100%;
+  padding:15px 10px;
+  border-top:1px solid #dadada;
+}
 
-/* Depth2 - hover */
-.dep2 li:hover a{
-  background-color:rgba(0,0,0,.5);
-  color:#fff;
-  font-weight:bold;
-  text-shadow:2px 2px 2px rgba(0,0,0,.5);
+/* 한 줄 말줄임 처리
+overflow:hidden;
+display:inline-block;
+max-width:100%;
+text-overflow:ellipsis; //...말줄임 역할
+white-space:nowrap; // 텍스트를 한 줄로 처리하는 역할
+*/
+
+/* type2  */
+.tab{
+
 }
-/* 뎁스1 마우스 hover시 뎁스2 보이게 처리 */
-.dep1:hover .dep2{
+.tab .tabtit{
+  display:inline-block;
+  position:relative;
+  float:left;
+  margin-right:-1px;
+}
+.tab .tabtit a{
+  display:inline-block;
+  min-width:100px;
+  height:40px;
+  padding:10px 10px;
+  border:1px solid #dadada;
+  background-color:#f4f4f4;
+  text-align:center;
+}
+.tab .tabcnt{
+  display:none;
+  position:absolute;/* absolute에는 width값 줘야함 */
+  width:100%;
+  top:39px;
+  left:0;
+}
+.tab .tabcnt ul{
+  width:100%;
+  padding:15px 10px;
+  border-top:1px solid #dadada;
+}
+.tab .tabcnt li{
+  position:relative;
+  padding-left:10px;
+  border-bottom:1px dotted #dadada;
+}
+.tab .tabcnt li::before{
+  content:"";
+  display:inline-block;
+  position:absolute;
+  top:50%;
+  left:0;
+  width:4px;
+  height:4px;
+  background-color:#dadada;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  border-radius:3px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  -ms-border-radius:3px;
+  -o-border-radius:3px;
+}
+
+.tab .tabcnt li a{
+  overflow:hidden;
+  display:inline-block;
+  max-width:calc(100% - 100px);/* 말줄임표 */
+  padding:8px 0;
+  text-overflow:ellipsis;/* 말줄임표 */
+  white-space:nowrap;/* 한줄로 만듦 */
+}
+.tab .tabcnt li .date{
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+}
+.tab .tabcnt .more{
+  position:absolute;
+  top:-20px;
+  right:5px;
+  display:inline-block;
+}
+
+/* 활성화 메뉴 - on */
+.tab .tabtit.on{
+  z-index:1;
+}
+.tab .tabtit.on a{
+  border-color:#222;
+  border-bottom-color:transparent;
+  background-color:#fff;
+  font-weight:bold;
+}
+.tab .tabcnt.on{
+ display:block;
+}
+
+/* 서브 콘텐츠 탭메뉴 구조 */
+
+.cbody{
+  width:700px;
+  margin:0 auto;
+}
+.tapmenu{
+  width:100%;
+  height:40px;
+  border-bottom:1px solid #dadada;
+}
+.tapmenu::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.tapmenu li{
+  display:inline-block;
+  position:relative;
+  float:left;
+  margin-right:-1;
+}
+.tapmenu li a{
+  display:inline-block;
+  min-width:100px;
+  height:40px;
+  padding:10px;
+  border:1px solid #dadada;
+  border-bottom-color:#222;
+  background-color:#f4f4f4;
+  text-align:center;
+}
+.tapcnt{
+  display:none;
+  position:relative;
+
+  min-height:500px;
+  padding:15px 10px;
+  border:1px solid #dadada;
+  border-top:0;
+}
+
+/* 활성화 메뉴 - on */
+.tabmenu li.on{
+  z-index:1;
+}
+.tabmenu li.on a{
+  border-color:#222;
+  border-bottom-color:transparent;
+  background-color:#fff;
+  font-weight:bold;
+}
+.tapcnt.on{
   display:block;
 }

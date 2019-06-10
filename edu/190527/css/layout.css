@@ -1,0 +1,101 @@
+/*body{
+   background-color:#000; */
+}
+/* @media(min-width:361px){
+  body{
+    background-color:green;
+  }
+}
+@media(min-width:721px){
+  body{
+    background-color:blue;
+  }
+}
+@media(min-width:1025px){
+  body{
+    background-color:red;
+  }
+} */
+/* 
+
+    반응형 / 적응형
+    - 스크롤이 생긴다면 적응형 /다음트로이/모바일 먼저
+
+max는 큰 거부터 들어가야하고, min은 작은 거부터 들어가야함 */
+
+body{
+  min-width:1100px;
+}
+/* layout - header */
+.header{
+  width:1100px;
+  height:100px;
+  margin:0 auto;
+  background-color:gray;
+}
+/* layout - container */
+.container{
+  width:1100px;
+  margin:0 auto;
+  background-color:lightblue;
+}
+.container::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+/* layout - container > .sidemenu */
+.sidemenu{
+  float:left;
+  width:200px;
+  height:400px;
+  background-color:yellow;
+}
+/* layout - container > .csection */
+.csection{
+  float:right;
+  width:900px;
+  min-height:700px;
+  padding:10px 20px;
+  border-left:1px solid #dadada;
+  background-color:#f4f4f4;
+}
+/* layout - footer */
+.footer{
+  width:1100px;
+  height:80px;
+  margin:0 auto;
+  background-color:black;
+}
+
+/* Media Query - desk first */
+@media(max-width:720px){
+  body{
+    min-width:100%;/* min-width값부터 제거 */
+  }
+  .header,
+  .container,
+  .footer{
+    width:100%;
+  }
+  .container{
+    padding:10px 20px;
+  }
+  .sidemenu{
+    float:none;
+    width:100%;
+    height:auto;
+    padding:20px;
+  }
+  .csection{
+    float:none;
+    width:100%;
+    border-left:0;
+  }
+}
+@media(max-width:360px){
+  
+  .sidemenu{
+    display:none;
+  }
+}

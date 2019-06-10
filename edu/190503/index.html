@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position 기본</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <style>
+      *{margin:0;
+        padding:0;
+        border:0;
+        color:#222;
+        /* color:rgba(0,0,0); */
+        font-size:13px;
+        font-style:normal;
+        box-sizing:border-box;/* 안 여백을 알아서 계산해 줌 */
+        }
+
+      body{
+        height:1500px;
+      }
+
+      div{
+        width:100px;
+        height:100px;
+        border:1px solid #222;
+      }
+
+      div span{
+        position:relative;/* 특정 하나만 위치 잡을 때 사용 */
+        top:10px;
+        font-size:30px;
+
+      }
+      div em{
+
+      }
+
+      .box{
+        position:relative;
+        top:50px;
+        width:300px;
+        height:300px;
+
+      }
+
+      .a{
+        position:absolute;/* 공중에 떠있기 때문에 다른 건 영향 안 미침 */
+        /* 부모 속성이 없다면 body */
+      /* absolute는 마크업 기준 가장 아래가 위로 올라옴 */
+        bottom:0px;/* 좌측 상단부터 기준 / bottom은 하단이 기준*/
+        right:0px;
+        /* margin:50px 0 0 120px; */
+      }
+
+      .b{/* position은 공중에 떠 있는 형태 */
+        position:relative;/* relative로 움직이면 본인만 움직임 */
+        /* margin:10px; magin으로 움직이면 다 같이 움직임 */
+        top:10px;
+      }
+
+      .c{/* top등 좌표값은 body 기준 */
+        position:fixed;
+        /* bottom:0;좌표값을 주면 body가 기준이 됨 */
+        /* right:0; */
+        margin-top:200px;/* 현재 위치에서 조금만 움직이고 싶을 땐 margin */
+      }
+
+      .position{
+        position:fixed;
+        top:50%;
+        left:50%;
+        width:00px;
+        height:200px;
+        margin-top:-100px;
+        margin-left:-100px;
+        background-color:yellow;
+
+      }
+      .position div{
+        /* 첫번째 방법*/
+        position:absolute;
+        /* top:50%;
+        left:50%;/* 여기까지만 할 경우 꼭지점 기준으로 시작해서 정 가운데가 아님
+        margin-top:-50px;
+        margin-left:-50px;  */
+
+        /* 두번째 방법 - 미세하게 첫번째 방법보다 더 정확히 가운데로 옴
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin:auto; 이 경우 margin으로 위치 옮기면 안됨 */
+        
+        z-index:1;
+      }
+      .position .pos1{
+        background-color:paleturquoise;
+        z-index:5;
+        opacity:.5;/* 안에 내용까지 다 opacity처리 */
+        /* 
+        position 활용하여 정가운데 정렬 시키는 방법
+          1. position:absolute, fixed;top:50%;left:50%;width:100px;height:100px;margin:-50px 0 0 -50px; / 박스사이즈 있을 때
+          2. position:absolute, fixed;top:0;right:0;bottom:0;left:0;width:100px;height:100px;margin:auto; / 박스사이즈 있을 때
+        */
+
+
+      }
+      .position .pos2{
+        top:0;
+        right:0;
+        /* margin-top:-100px;
+        margin-left:-100px; */
+        background-color:palegoldenrod;
+        z-index:4;
+
+       
+      }
+      .position .pos3{
+        top:50%;
+        left:50%;
+        margin-top:-50px;
+        margin-left:-50px;
+        background-color:palevioletred;
+        z-index:6;
+      }
+      .position .pos4{
+        bottom:0;
+        left:0;
+        /* margin-top:-100px;
+        margin-left:0px; */
+        background-color:darkolivegreen;
+        z-index:2;
+      }
+      .position .pos5{
+        bottom:0;
+        right:0;
+        /* margin-top:0px;
+        margin-left:0px; */
+        background-color:purple;
+        z-index:1;
+      }
+
+      /* 
+      [boxmodel]
+      width + height
+      margin + padding + border
+      width:78px; // 100 + 10(좌) + 10(우) + 1 + 1 = 122
+      margin:10px;
+      padding:10px;
+      border 1px solid #000;
+      */
+    </style>
+  </head>
+
+<body>
+  <!-- 
+    참조사이트
+    https://ko.learnlayout.com/
+    https://ofcourse.kr/html-course/
+    https://cssreference.io
+    http://pxtoem.com/
+    https://www.w3schools.com/
+   -->  
+
+   <!-- 
+    position 속성 value(값) 종류
+    기본 : static - top, right, bottom, left 이런 좌표값이 무효됨
+    상대 : relative - 현재 자신 위치에서 기본이 본인이 기준이 됨
+    절대 : absolute - 부모의 속성에 position이 들어가있는 경우 부모 기준이 됨 
+    고정 : fixed - 부모는 항상 body 기준으로 움직이고 브라우저 위치에 고정됨
+    순서 제어 : z-index position에서만 사용 가능하며, 단위값은 안들어감/음수, 양수 전부 활용 가능
+    /* 10이 넘어가면 10단위로 끊는 게 좋음 / 최대 1000 */
+  -->
+  <!-- <div class="box">
+    <div class="a">
+      <span>A</span>
+      <em>1,000</em>
+    </div>
+
+    <div class="b">b</div>
+    <div class="c">c</div>
+  </div> -->
+
+  <div class="position">
+    <div class="pos1"></div>
+    <div class="pos2"></div>
+    <div class="pos3"></div>
+    <div class="pos4"></div>
+    <div class="pos5"></div>
+  </div>
+
+</body>
+</html>

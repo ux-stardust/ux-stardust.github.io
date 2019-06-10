@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><!--문서 정보 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>마크업 기초 - 190423 화요일</title>
+</head>
+<body>
+	<!-- alt+shift+a / Ctrl+/ -->
+	<!-- 
+		블록 요소
+		div 분할, 레이아웃
+		p 단락
+		ul 
+		ol
+		li
+		dl
+		dt
+		dd
+		h1~h6(제목이 있으면 Serching이 쉬움)
+		hr
+
+		table(요소)
+		thead
+		tbody
+		tfoot
+		tr
+		th
+		td
+
+		form
+		fieldset
+		
+		header
+		footer
+		nav
+		section
+		article
+		adress
+		aside(부가적인 정보)
+		main
+		figure(이미지정보 묶을 때)
+		figcaption(이미 정보를 설명할 때)
+		<시맨틱 마크업-의미가 있는 태그들이 있으니 사용해라>
+
+
+		인라인 요소
+		span
+		a
+		br
+		i
+		b
+		em
+		strong
+		img
+		ins
+		del
+
+		input
+		select
+		textarea
+
+	 -->
+ 
+	<dl>
+		<dt><!-- 정의 제목 dt와 dd는 형제 요소--></dt>
+		<dd><!-- 정의 내용 --></dd>
+		<dd></dd>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+
+		<h1>반응형 웹 퍼블리싱</h1>
+		<h2>책 소개</h2>
+		<p>책 소개 문구
+		</p>
+
+		<h2>목차</h2>
+		<p>머리말</p>
+		<p>웹 표준 퍼블리싱</p>
+		<h3>1. 웹표준 배경 지식</h3>
+			<ul>
+				<li><strong>01. 퍼블리싱 준비</strong>
+					<ul>
+						<li>01-1. HTML</li>
+						<li>01-1. HTML</li>
+						<li>01-1. HTML</li>
+					</ul>
+				</li>
+				<li>02. 퍼블리싱 준비
+					<p>02-1. CSS</p>
+					<p>02-1. CSS</p>
+					<p>02-1. CSS</p>
+				</li>
+				<li>01. 퍼블리싱 준비</li>
+			</ul>
+		<h3>2. 웹표준 배경 지식</h3>
+		<dl>
+			<dt><em>01. 퍼블리싱 준비</em></dt>
+			<dd>
+				<ul>
+					<li></li>
+					<li></li>
+					<li>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</li>
+				</ul>
+			</dd>
+			<dt>01. 퍼블리싱 준비</dt>
+			<dd></dd>
+			<dt>01. 퍼블리싱 준비</dt>
+			<dd></dd>
+		</dl>
+		<h3>3. 웹표준 배경 지식</h3>
+	</dl>
+
+	<div></div>
+	<div>
+		<div></div>
+		<div></div>
+	</div>
+	<div></div>
+
+<header></header>
+<main>
+	<nav></nav>
+	<section></section>
+</main>
+<footer></footer>
+
+<div>
+	<h2>공지사항</h2>
+	<ul>
+		<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+		<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+		<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+		<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+		<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+	</ul>
+	<p><a href="#">더보기</a></p>
+</div>
+
+<dl>
+		<dt>공지사항</dt>
+		<dd>
+			<ul>
+				<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+				<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+				<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+				<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+				<li><a href="view.html">공지사항 최신 글입니다.</a><span>2019.04/23</span></li>
+			</ul>
+		<p><a href="#">더보기</a></p>
+		</dd>
+	</dl>
+
+	<nav>
+		<ul>
+			<li><a href="#">메뉴1</a>
+				<ul>
+					<li><a href="#">메뉴1-1</a></li>
+					<li><a href="#">메뉴1-2</a></li>
+					<li><a href="#">메뉴1-3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴2</a>
+				<ul>
+						<li><a href="#">메뉴1-1</a></li>
+						<li><a href="#">메뉴1-2</a></li>
+						<li><a href="#">메뉴1-3</a></li>
+					</ul>
+			</li>
+			<li><a href="#">메뉴3</a>
+				<ul>
+						<li><a href="#">메뉴1-1</a></li>
+						<li><a href="#">메뉴1-2</a></li>
+						<li><a href="#">메뉴1-3</a></li>
+					</ul>
+			</li>
+			<li><a href="#">메뉴4</a>
+				<ul>
+						<li><a href="#">메뉴1-1</a></li>
+						<li><a href="#">메뉴1-2</a></li>
+						<li><a href="#">메뉴1-3</a></li>
+					</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div>
+		<h2>뉴스토픽</h2>
+		<ul>
+			<li><a href="#">뉴스</a>
+				<ul>
+					<li><a href="#"><b>1</b> <span>이언주 바른미래당 탈당</span><i>new</i></a></li>
+					<li><a href="#"><b>2</b> <span>이언주 바른미래당 탈당</span><i>new</i></a></li>
+				</ul>
+				<p>2019.04.23 14:30 ~ 17:30</p>
+			</li>
+			
+			<li><a href="#">연예&#183;스포츠</a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+
+	<table border="1"><!-- 테이블 셀 -->
+		<caption>테이블의 제목</caption>
+		<colgroup>
+			<col style="width:100px">
+			<col style="width:300px">
+			<col style="width:100px">
+		</colgroup>
+		<thead><!-- 제목셀을 구분하는 영역 -->
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+			</tr>
+		</thead>
+			<!-- tfoot 합계 구하거나 하단 정보 표시할 때 사용/헤드와 바디사이 -->
+		<tfoot>
+			<tr>
+				<th>총합계</th><!-- th는 가운데 정렬/볼드 -->
+				<td>1000</td>
+				<td>1000</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>10</td>
+				<td><a href="#">공지사항 제목입니다</a></td>
+				<td>관리자</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td><a href="#">공지사항 제목입니다</a></td>
+				<td>관리자</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td><a href="#">공지사항 제목입니다</a></td>
+				<td>관리자</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td><a href="#">공지사항 제목입니다</a></td>
+				<td>관리자</td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+	<table border="1">
+		<caption>회원가입 양식</caption>
+		<colgroup>
+			<col>
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th>이름</th>
+				<td>홍길동</td>
+			</tr>
+			<tr>
+					<th>연락처</th>
+					<td>010-8629-7709</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>
+					서울특별시 구로구 디지털단지 더조은컴퓨터학원 203호
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><!-- 셀병합 -->
+					기타내용입니다.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table border="1">
+		<caption>기본 rowspan</caption>
+		<colgroup>
+			<col>
+			<col>
+			<col>
+		</colgroup>
+
+		<tbody>
+			<tr>
+				<th rowspan="3">가격표</th>
+				<td>1,000</td>
+				<td>2,000</td>
+			</tr>
+			<!-- rowspan을 사용한 후엔 아래 셀이 2개만 옴 -->
+			<tr>
+				<td colspan="2">2,000</td>
+			</tr>
+			<tr>
+					<td>2,000</td>
+					<td>3,000</td>
+				</tr>
+		</tbody>
+	</table>
+
+	<table border="1" style=width:100%><!-- border(속성)/"값value" -->
+		<caption>학년정보</caption>
+		<colgroup>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th rowspan="2">번호</th><!--rowspan은 처음에 온다 -->
+				<th colspan="2">1학년</th>
+				<th colspan="2">2학년</th>
+				<th colspan="2">3학년</th>
+			</tr>
+			<tr>
+				<th>1반</th>
+				<th>2반</th>
+				<th>1반</th>
+				<th>2반</th>
+				<th>1반</th>
+				<th>2반</th>
+				</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>10</td>
+				<td>50</td>
+				<td>30</td>
+				<td>30</td>
+				<td>50</td>
+				<td>20</td>
+				<td>15</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table>
+		<tr>
+			<td>
+
+			</td>
+			<td>
+
+			</td>
+		</tr>
+	</table>
+
+	<img src="image/apple.jpg" alt="얍얍">
+	<!-- alt까지가 표준 / 내 기준으로 바라본 이미지 경로는 상대경로 -->
+	<!-- 	ul>li*3>a -->
+	<ul>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+
+
+</body>
+</html>

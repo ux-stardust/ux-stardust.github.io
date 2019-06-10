@@ -1,0 +1,76 @@
+/* contents.css라고 해도 됨 - 본문에 들어가는 내용 */
+
+/* tabmenu */
+.tabgroup{
+
+}
+.tabmenu{
+  position:relative;
+  height:50px;
+}
+.tabmenu::after{
+	content:"";
+	clear:both;
+	display:block;
+}
+.tabmenu > li{
+	display:inline-block;
+	float:left;
+  width:35%;
+  border:1px solid #dadada;
+  border-bottom:0;
+}
+.tabmenu > li > a:hover{
+  color:#67aee5;
+  background-color:#fff;
+}
+.tabmenu > li > a{
+  display:inline-block;
+	width:100%;
+  height:49px;
+  line-height:50px;
+  text-align:center;
+  font-size:15px;
+  background-color:#f4f4f4;
+}
+.tabcnt{
+  position:relative;
+  display:none;
+  min-height:300px;
+}
+
+.tabcnt ul{
+  position:absolute;
+  width:100%;
+  border-top:1px solid #dadada;
+}
+.tabcnt li{
+  padding:8px 0;
+  font-size:18px;
+  border-bottom:1px dotted #dadada; 
+}
+.tabcnt li a{
+
+}
+.tabcnt li .date{
+  float:right;
+  padding-right:30px;
+}
+.tabcnt .more{
+  position:absolute;
+  display:inline-block;
+  bottom:0;
+  right:5px;
+ 
+}
+/* tabmen - 활성화 */
+.tabmenu > .on{
+  border:1px solid #222;
+  border-bottom:0;
+}
+.tabmenu > .on > a{
+
+}
+.tabcnt.on{
+  display:block; 
+}

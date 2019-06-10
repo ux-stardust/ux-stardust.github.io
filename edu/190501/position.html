@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position 기본</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <style>
+      /* 초기화 RESET */
+    *{
+      margin:0px;
+      padding:0px;
+      border:0;
+      line-height:1;
+      font-size:13px;
+      color:#222;
+      text-decoration:none;
+      box-sizing:border-box;
+      /* 에릭마이어 CSS */
+    }
+    /* 
+    CSS 공작소 예제 참고 사이트
+    position
+    기본 - static
+    상대값 - relative : 기준은 본인 자신이 됨
+    절대값 - absolute : 기준은 부모 / 부모에 position속성이 없으면 body가 기준
+    고정값 - fixed  : 기준(부모)은 body(브라우저) 기준으로 고정됨
+    sticky / 아직까진 버그가 많음
+    
+    z-index - position의 순서를 제어할 때 사용
+
+    top
+    right
+    bottom
+    left
+    */
+    section{
+      /* position:relative; */
+      top:50px;
+      width:300;
+      height:300px;
+      /* border:1px solid #000; */
+    }
+    div{
+      position:absolute;/* 아래가 위로 올라와 쌓임/마크업 구조는 위로 올라오는 형태 */
+      width:100px;
+      height:100px;
+      min-width:80px;
+      min-height:80px;
+      max-width:150px;
+      max-height:150px;
+      border:1px solid;      
+    }
+    .a{
+      /* z-index:1;음수도 가능- 숨김/순서 제어할 땐 최대 1000단위로만 */
+      top: 50%; 
+      left:50%;
+      margin-top:-100px;
+      margin-left:-100px;
+      border-color:palevioletred;
+    }
+    .b{
+      top: 50%; 
+      left:50%;
+      margin-top:-100px;
+      margin-left:0px;
+      border-color:green;
+    }
+    .c{
+      /* top:50%;
+      left:50%;
+      margin-top:-50px;
+      margin-left:-50px; */
+      /* top:0;
+      right:0; 
+      left:0;
+      bottom:0;
+      left:0;
+      margin:auto; */
+      z-index:1;
+      top: 50%; 
+      left:50%;
+      transform:translate(-50%,-50%); 
+      border-color:blue;
+    }
+      .d{
+      top: 50%; 
+      left:50%;
+      margin-top:0px;
+      margin-left:-100px;
+      border-color:yellow;
+    }
+    .e{
+      top: 50%; 
+      left:50%;
+      border-color:skyblue;
+    }
+    /* 부모 기준(section)으로 제어 가능/
+    /* 
+    position을 활용한 가운데 정렬 방법
+    1. 첫번쨰 방법(사이즈가 있을 때 사용)
+    top: 50%; 
+    left:50%;
+    margin-top:-50px;
+    margin-left:-50px;
+
+    2. 이게 더 정확하게 가운데로 위치함
+    top:0; 
+    right:0;
+    left:0;
+    bottom:0;
+    left:0;
+    margin:auto; 
+
+    3. 
+    top: 50%; 
+    left:50%;
+    transform:translate(-50%,-50%); / CSS3 /하위브라우저 적용 안됨 
+    transform:translateX(-50%); 
+    transform:translateY(-50%); 
+    - webkit-transform:translate();
+    - o-transform:translate();
+    - moz-transform:translate();
+    - ms-transform:translate();
+    */
+    </style>
+</head>
+<body><!-- class name은 소문자/의미에 맞게 -->
+  <section>
+   <div class="a"></div>  
+   <div class="b"></div>  
+   <div class="c"></div>  
+   <div class="d"></div>  
+   <div class="e"></div>
+  </section>
+</body>
+</html>

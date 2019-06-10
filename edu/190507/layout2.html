@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html5요소를 활용한 레이아웃</title>
+    <link rel="stylesheet" type="txt/css" href="css/reset.css">
+    <link rel="stylesheet" type="txt/css" href="css/layout.css">
+    <style>
+    /* reset */
+      *{
+        margin:0;
+        padding:0;
+        color:#222;
+        font-size:13px;
+        box-sizing:border-box;
+      }
+      .clear{
+        clear:both;
+        width:100%;
+        height:auto;
+      }
+
+      /* layout */
+      .wrap{
+        padding:20px;
+        background-color:gray;
+        text-align:center;/* 블럭요소 안에 인라인 요소를 정렬할 때 text-align */
+      }
+      .wrap *{/* *이 가장 우선 순위가 낮음 */
+          margin-bottom:10px;
+          padding:10px;
+          border:1px solid tomato;
+          background-color:#fff;
+      }
+      .header{
+        min-height:100px;
+      }
+      .nav{
+        min-height:40px;
+        
+      }
+      .container{
+        /* overflow:hidden; */
+        
+      }
+      .footer{
+        margin-bottom:0;
+        min-height:60px;
+      }
+      .main{
+        overflow:hidden;
+        position:relative;
+        padding:10px;
+      }
+      .main span{
+        position:absolute;
+        top:5px;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      .main .article{
+        width:49%;
+        min-height:80px;
+        padding:1%;
+      }
+      .main .fleft{
+        float:left;
+      }
+      .main .fright{
+        float:right;
+      }
+      .section{
+        float:left;
+        width:49%;
+        padding:1%;
+      }
+      .section .article{
+        min-height:209px;
+
+      }
+      .aside{
+        width:49%;
+        float:right;
+        padding:1%;
+      }
+      .figure{
+        
+      }
+      .imgbox{
+        min-height:100px;
+      }
+      .figcaption{
+        min-height:50px;
+      }
+    </style>
+</head>
+<body>
+  <div class="wrap">
+  <header class="header">header
+
+  </header>
+  <nav class="nav">nav
+
+  </nav>
+  <main class="container"><!-- 서브컨텐츠영역을 감싸는 경우 container라고도 많이함 -->
+    <main class="main"><span>main</span>
+      <atricle class="article fleft">article</atricle>
+      <article class="article fright">article</article>
+    </main><!-- 큰 구조부터 레이아웃 잡고 세세한 걸 마크업하는 식으로 진행 -->
+    <section class="section">section
+      <article class="article">article</article>
+    </section>
+    <aside class="aside">aside
+      <figure class="figure">
+        figure
+        <div class="imgbox">img</div>
+        <figcaption class="figcaption">figcaption</figcaption>
+      </figure>
+    </aside>
+    <div class="clear"></div>
+  </main>
+  <footer class="footer">footer
+
+  </footer>
+</div>
+</body>
+</html>

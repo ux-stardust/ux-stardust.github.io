@@ -1,0 +1,164 @@
+/* tabmenu */
+.tabgroup{
+  position:relative;
+  margin:0 auto;
+  width:500px;
+  min-height:350px;
+}
+.tabmenu{
+
+}
+.tabtit{
+  display:inline-block;
+  position:relative;
+  float:left;
+  margin-right:-1px; 
+}
+.tabtit a{
+  display:inline-block;
+  min-width:100px;
+  height:40px;
+  padding:10px 10px;
+  border:1px solid #dadada;
+  background-color:#f4f4f4;
+  font-size:15px;
+  text-align:center;
+}
+.tabcnt{
+
+}
+.tabcnt ul{
+  display:none;
+  position:absolute;
+  top:39px;
+  left:0;
+  width:100%;
+  padding:15px 10px;
+  border-top:1px solid #dadada;
+}
+.tabcnt li{
+  position:relative;
+  padding-left:10px;
+  font-size:14px;
+  border-bottom:1px dotted #dadada;
+}
+.tabcnt li::after{
+  content:"";
+  display:inline-block;
+  position:absolute;
+  top:50%;
+  left:0;
+  width:4px;
+  height:4px;
+  background-color:#dadada;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  border-radius:3px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  -ms-border-radius:3px;
+  -o-border-radius:3px;
+}
+.tabcnt li a{
+  overflow:hidden;
+  display:inline-block;
+  max-width:calc(100% - 100px);
+  padding:8px 0;
+
+}
+.tabcnt .star{
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+}
+.tabcnt .cntit{
+  position:absolute;
+  top:10px;
+  right:5px;
+  display:inline-block;
+}
+
+/* 활성화 메뉴 - ON */
+.tabmenu.on .tabtit{
+  z-index:1;
+}
+.tabmenu.on .tabtit a{
+  border-color:#222;
+  border-bottom-color:transparent;
+  background:#fff;
+  font-weight:bold;
+}
+.tabmenu.on ul{
+  display:block;
+}
+.tabtit > a:hover{
+  background-color:#67ffee;
+
+}
+
+/* cbody */
+.cbody{
+  width:700px;
+  margin:0 auto;
+
+}
+.tapmenu{
+  width:100%;
+  height:40px;
+  border-bottom:1px solid #222;
+}
+
+.tapmenu:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.tapmenu li{
+  position:relative;
+  float:left;
+  display:inline-block;
+  margin-right:-1px;
+}
+
+.tapmenu li a{
+  display:inline-block;
+  min-width:100px;
+  height:40px;
+  padding:10px;
+  border:1px solid #dadada;
+  border-bottom-color:#222;
+  background-color:#f4f4f4;
+  text-align:center;
+}
+.tapcnt{
+  position:relative;
+  display:none;
+  min-height:500px;
+  padding:15px 10px;
+  border:1px solid #222;
+  border-top:0;
+}
+
+/* 활성화 - on */
+
+.tapmenu li.on{
+  z-index:1;
+}
+.tapmenu li.on a{
+  border-color:#222;
+  border-bottom-color:transparent;
+  background-color:#fff;
+  font-weight:bold;
+}
+.tapcnt.on{
+  display:block;
+}

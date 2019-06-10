@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      color:0;
+      border:0;
+      font-size:13px;
+      box-sizing:border-box;
+    }
+
+    li{
+      float:left;
+      width:50%;
+      padding:40px;
+    }
+    li:first-child{
+      background-color:gold;
+    }
+    li:nth-child(2){
+      border:3px solid #000;
+    }
+    li:nth-child(3){
+      border:3px dotted blue;
+    }
+    li:nth-child(4){
+      background-color:red;
+    }
+    li:nth-child(5){
+      background-color:yellow;
+    }
+    li:nth-child(6){
+      background-color:blue;
+    }
+    li:nth-child(7){
+      background-color:gray;
+    }
+    li:nth-child(8){
+      background-color:black;
+      border:4px solid yellow;
+    }
+    li:nth-child(9){
+      background-color:darkblue;
+      padding:100px;
+    }
+    li:last-child{
+      margin-top:50px;
+      border:1px dashed rebeccapurple;
+    }
+    /* 0+1=1 
+      1+ 2=3
+      2+3=5 */
+    li:nth-child(2n+1){
+      clear:both;
+      /* 
+      0+1=1
+      1+3=4
+      3+4=7
+      */
+    }
+    /* li:nth-child(3n+1){
+      clear:both; */
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    li padding:40px;
+   -->
+   <ul>
+     <li>background-color:gold</li>
+     <li>border:3px solid #000</li>
+     <li>border:3px dotted blue</li>
+     <li>background-color:red</li>
+     <li>background-color:yellow</li>
+     <li>background-color:blue</li>
+     <li>background-color:gray</li>
+     <li>background-color:black;border:4px solid yellow</li>
+     <li>background-color:darkblue;padding:100px;</li>
+     <li>margin-top:50px;border:1px dashed rebeccapurple;</li>
+   </ul>
+</body>
+</html>
+tbiz.giftshow.com/pub/web/#/prchmng
+elemnet-ui / 라이브러리 제공(사용하지말것/개발자전용)
+조건주석문

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹표준 기초 190417</title>
+</head>
+<body>
+    <!-- 
+
+        Block요소(컨텐츠가 밑으로 나열돼서 떨어지는 구조/안에 인라인요소 올 수 있음)
+        div
+        p
+        ul
+        li
+        ol
+        dl
+        dt
+        dd
+        table
+        th
+				td
+				h1(헤딩요소/타이틀)
+				h2
+				h3
+				h4
+				h5
+				h6
+				hr
+
+
+
+        header 상단요소
+        footer 하단요소
+        aside 기타요소
+        section 섹션
+        article 독립적인 요소
+        nav 메뉴
+
+        Inline요소(컨텐츠가 옆으로 붙는 구조/안에 블록요소가 올 수 없음)
+
+        span
+        a
+        img
+        br
+        input
+        select
+        ins
+        del
+        strong
+        em
+        b
+        i
+
+
+		 -->
+		 
+	<div>
+			block요소이며 분할 또는 레이아웃을 잡을 때 사용 디자인 용도로 활용 
+	</div>
+		 <hr><!-- 구분선 또는 수평선 / 단일요소-->
+		 <h1>타이틀</h1>
+		 <h2>타이틀</h2>
+		 <h3>타이틀</h3>
+		 <h4>타이틀</h4>
+		 <h5>타이틀</h5>
+		 <h6>타이틀</h6>
+
+		 <hr>
+
+		 <p>block요소이며 문단 또는 단락 요소</p>
+
+		 <hr>
+
+		<ul>
+			<li>block요소-순서가 없는 목록</li>
+			<li>block요소-순서가 없는 목록</li>
+		</ul>
+
+		<ol>
+			<li>block요소 - 순서가 있는 목록</li>
+			<li>block요소 - 순서가 있는 목록</li>
+		</ol>
+
+		<dl>
+			<dt>block요소 - 정의목록의 정의</dt>
+			<dd>block요소 - 정의목록의 내용</dd>
+		</dl>
+
+
+		<hr>
+
+		<span>Inline요소/아무 의미없는 요소, 단지 디자인할 때 사용</span>
+		<a href="#">Inline요소 링크요소 - 문서와 문서를 연결시켜 줄 때 사용</a>
+		<img src="이미지 경로" alt="이미지 설명">
+		<br><!-- Inline요소이며 줄바꿈 할 때 사용/ 단일요소 -->
+		<ins>Inline요소 - 삽입</ins>
+		<del>Inline요소 - 삭제</del>
+		<b>Inline요소 - 텍스트를 굵은 글씨로 표현</b>
+		<strong>Inline요소 - bold체로 표현 강조의 의미를 가짐</strong>
+		<i>Inline요소 - 이탤릭체 기울임꼴로 표현됨</i>
+		<em>Inline요소 - 이탤릭체이면서 강조의 의미</em>
+
+		<hr>
+		<hr>
+
+		<div>
+			<h1>목차</h1>
+			<ul><!-- <ul>과 <li> 사이에 무언가를 집어 넣어서는 안됨 -->
+				<li>
+					1. HTML
+					<ul>
+						<li>1.1 Block 요소</li>
+						<li>1.2 Inline 요소</li>
+					</ul>
+				</li><!-- <li>와 <li> 사이에 무언가 넣어서는 안됨 -->
+				<li>
+					2. CSS
+					<ul>
+						<li>2.1 display</li>
+						<li>2.2 overflow</li>
+					</ul>
+				</li>
+				<li>
+					3. Javascript
+					<ul>
+						<li>3.1 변수
+							<ur>
+								<li>3.1.1</li>
+								<li>3.2.2</li>
+							</ur>
+						</li>
+						<li>3.2 배열</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div>
+
+			<h1>목차</h1><!-- <h1~6>은 순차적으로만 사용 가능/헤딩 요소로만 표현해보기 -->
+			
+			
+			<h2>1. HTML</h2>
+			<h3>1.1 BLOCK 요소</h3>
+			<h3>1.2 INLINE 요소</h3>
+
+			<h2>2. CSS</h2>
+			<h3>2.1 display</h3>
+			<h3>2.3 overflow</h3>
+
+			<h2>3. Javascript</h2>
+			<h3>3.1 변수</h3>
+			<h3>3.2 배열</h3>
+		</div>
+
+		<div>
+		 
+			<h1>목차</h1>
+			<dl><!-- 목록 태그 밖에서 사이에 무언가 들어가서는 안됨/dt와 dd는 한쌍으로 이루어짐 -->
+				<dt>
+					1. HTML
+				</dt>
+				<dd>
+					<ul>
+						<li>1.1 BLOCK 요소</li>
+						<li>1.2 INLINE 요소</li>
+					</ul>
+				</dd>
+
+				<dt>
+						2. CSS
+				</dt>
+				<dd>
+					<P>2.1 display</P>	
+					<P>2.2 overflow</P>	
+				</dd>
+
+					<dt>
+						3. Javascript
+					</dt>
+					<dd>
+						<ol>
+							<li>3.1 변수</li>
+							<li>3.2 배열</li>
+						</ol>		
+					</dd>
+			</dl>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 기본 구조</title>
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <style>
+      /* 초기화 */
+      *{
+        margin:0;
+        padding:0;
+        border:0;
+        line-height:1;
+        color:#222;
+        font-size:13px;
+        font-style:normal;
+        text-decoration:none;/* underline */
+        box-sizing:border-box;
+      }
+      
+      /* 레이아웃 */
+      div{
+        overflow:auto;/* hidden/auto/scroll */        
+        width:100px;
+        height:50px;
+        margin:10px;
+        padding:20px;
+        border:1px solid #000;
+        /* 100 + 20 + 20 + 1 + 1 = 142 실제 가로 값 */
+        /* box-sizing:border-box;css3 속성 */
+      }
+
+      div{
+        width:200px;
+      }
+
+      /* 아이디는 #, 클래스는. */
+      .a{
+        /* hidden, visible */
+        visibility:hidden;
+      }
+      .b{
+        /* none, block(블럭요소로 바꿔서 보이게끔), inline, inline-block 
+        caniuse.com css속성 브라우저 지원 여부 확인하는 사이트 */
+        display:none;/* display는 영역 자체가 사라짐 */
+      }
+      .c{
+
+      }
+    </style>
+</head>
+<body>
+<!-- 
+      CSS 불러들이는 방식 4가지
+      1. linkd 방식 - 외부에서 CSS를 불러들이는 방식
+      2. internel 방식의 head안에 style로 지정하는 방식
+      3. 인라인 스타일 방식 요소에 직접 style=""로 지정하는 방식
+      4. import 방식 @import url(); 로 외부에서 CSS 호출하는 방식 / 무조건 최상단에 써야함
+
+      1. <link rel="stylesheet" type="text/css" href="경로">
+      4. <style>
+          @import url('css경로');
+
+
+        </style> 
+      <style>
+      </style>
+      3.<div style=""></div> 
+
+      overflow
+      visibility
+      display ///확장팩 live server preview
+     -->
+  <div class="a">
+    a HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.    
+  </div>
+  <div class="b">
+    b HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.    
+  </div>
+  <div class="c">
+    c HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.    
+  </div>
+
+
+  
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float을 이용한 레이아웃 복습</title>
+  <link rel="stylesheet" type="txt/css" href="css/reset.css">
+  <link rel="stylesheet" type="txt/css" href="css/layout.css">
+  <style>
+    /* RESET  */
+    *{
+      margin:0;
+      padding:0;
+      color:#222;
+      font-size:13px;
+      font-style:normal;
+      box-sizing:border-box;
+    }
+    .clear{
+      clear:both;
+    }
+    div{
+      margin:0 auto;
+    }
+    .header{
+      width:700px;
+      height:80px;
+      background-color:lightpink;
+    }
+    .main{
+      position:relative;
+      /* overflow:hidden; */
+      width:700px;
+      height:100%;
+      background-color:lightyellow;
+    }
+    .sidemenu{
+      float:left;
+      margin:10px;
+      width:150px;
+      min-height:80px;
+      background-color:lightgreen;
+    }
+    .article{
+      float:right;
+      margin:10px 10px 0 10px;
+      width:510px;
+      min-height:500px;
+      background-color:skyblue;
+    }
+    .quick{
+      position:absolute;
+      margin-right:-100px;
+      right:0;
+      width:100px;
+      height:80px;
+      background-color:lavender;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+
+  </div>
+  <!-- end : header  -->
+  <div class="main">
+    <div class="sidemenu"></div>
+    <!-- end : sidemenu -->
+    <div class="article"></div>
+    <!-- end : article -->
+    <div class="quick"></div>
+    <div class="clear"></div>
+  </div>
+  <!-- end : main -->
+  <div class="footer"></div>
+  <!-- end : footer -->
+</body>
+</html>

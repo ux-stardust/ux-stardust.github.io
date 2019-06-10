@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" type="txt/css" href="css/reset.css">
+  <link rel="stylesheet" type="txt/css" href="css/layout.css">
+  <style>
+    /* RESET  */
+    *{
+      margin:0;
+      padding:0;
+      color:#222;
+      font-size:13px;
+      font-style:normal;
+      text-align:center;
+      box-sizing:border-box;
+    }
+    .clear{
+      clear:both;
+      width:100%;
+      height:auto;
+    }
+    body{
+      min-width:360px;
+      padding:15px;
+    }
+    /* 다음 트로이 - 모바일화면 테스트 */
+    /* IE 대응 html5요소 처리 - win7에서 ie11과 win10에서의 ie11 랜더링이 다름. 정품인지 벌크인지도 다름*/
+    header,
+    section,
+    main,
+    article,
+    footer,
+    nav{
+      display:block;
+    }
+
+    /* Layout - header */
+    .header{
+      margin-bottom:10px;
+      padding:10px;
+      border:2px solid #222;
+      background-color:lightgrey;
+    }
+    .nav{
+      height:80px;/* 계산 80+10+10 */
+      padding:10px;
+      border:1px dotted red;
+      background-color:blanchedalmond;
+    }
+    /* Layout - main */
+    .main{
+      margin-bottom:10px;
+      padding:10px;
+      border:2px solid #222;
+    }
+     /* Layout - sidemenu */
+    .sidemenu{
+      float:left;
+      width:24%;
+    }
+    .sidemenu header{
+      margin-bottom:5px;
+      height:60px;
+      padding:10px;
+      border:1px dotted red;
+      background-color:lightgrey;
+    }
+    .sidemenu nav{
+      height:300px;
+      padding:10px;
+      border:1px dotted red;
+      background-color:lightgrey;
+    }
+     /* Layout - Contents */
+    .csection{
+      float:right;
+      width:75%;
+    }
+    .chead{
+      margin-bottom:5px;
+      height:60px;
+      padding:10px;
+      border:1px dotted red;
+      background-color:lightgrey;
+    }
+    .cbody{
+      margin-bottom:5px;
+      height:500px;
+      padding:10px;
+      border:1px dotted red;
+      background-color:lightgrey;
+    }
+    .cfoot{
+      height:60px;
+      padding:10px;
+      border:1px dotted red;
+      background-color:lightgrey;
+    }
+
+     /* Layout - footer */
+    .footer{
+      height:60px;
+      padding:10px;
+      border:2px solid #222;
+      background-color:lightgrey;
+     }
+  </style>
+</head>
+
+<body>
+  <header class="header"><p>header</p>
+    <nav class="nav"><p>nav</p></nav>
+  </header>
+  <main class="main"><p>main</p>
+    <section class="sidemenu"><p>section</p>
+      <header><p>header</p></header>
+      <nav><p>nav</p></nav>
+    </section>
+    <section class="csection"><p>section</p>
+      <header class="chead"><p>header</p></header>
+      <article class="cbody"><p>article</p></article>
+      <footer class="cfoot"><p>footer</p></footer>
+    </section>
+    <div class="clear"></div>
+  </main>
+  <footer class="footer"><p>footer</p>
+  </footer>
+</body>
+</html>

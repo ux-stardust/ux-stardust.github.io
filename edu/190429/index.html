@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>마크업 기본 - 폼요소 속성 알아보기</title>
+
+</head>
+<body>
+	<!-- 
+		input 
+		type="text"
+		type="password"
+		type="checkbox" 다중선택
+		type="radio" 단일선택
+
+		type="button" value="확인"
+		type="submit" value="확인"
+		type="image" src="이미지 경로" alt="확인"
+		type="reset" value="초기화"
+		button / a 태그 label 안에 있으면 안됨
+
+		select
+		<select name="">
+			<option></option>
+		</select>
+		textarea
+		<textarea cols="70" rows="7"></textarea>
+
+	 -->
+	 <form method="post" action="">
+		<fieldset><!-- HTML5에선 이렇게 안 묶어도 됨 -->
+			<legend>폼제목</legend>
+			<table>
+				<caption>테이블 제목</caption>
+				<colgroup>
+				 <col>
+				 <col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">이름</th>
+					<td>
+						<label>
+							<input type="text" name="" placeholder="이름을 입력해주세요.">
+						</label>
+					</td>
+				</tr>
+				<tr>
+						<th scope="row">비밀번호</th>
+						<td>
+							<label>
+								<input type="password" name="" required>
+							</label>
+							<label>
+									<input type="text" name="" value="비밀번호" readonly>
+									<!-- readonly는 고정값 / 수정불가 -->
+								</label>
+								<label>
+										<input type="text" name="" value="비밀번호" disabled>
+									</label>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">성별</th>
+						<td>
+							<label>
+								<input type="radio" name="rad" checked>
+									<span>여</span>
+								</label>
+								<label>
+										<input type="radio" name="rad">
+										<span>남</span>
+									</label>
+							</td>
+						</tr>
+						<tr>
+								<th scope="row">분야</th>
+								<td>
+									<label>
+										<input type="checkbox" name="">
+										<span>음악</span>
+									</label>
+									<label>
+											<input type="checkbox" name="">
+											<span>영화</span>
+										</label>
+										<label>
+												<input type="checkbox" name="">
+												<span>게임</span>
+										</label>
+								</td>
+							</tr>
+							<tr>
+								<th>전화번호</th>
+								<td>
+									<label><!-- label은 input 요소 하나씩 묶음 -->
+										<select name="">
+											<option seclected>선택</option>
+										</select>
+									</label>
+									<label>
+										<input type="text" name="">
+									</label>
+									<label>
+										<input type="text" name="">
+									</label>
+								</td>
+							</tr>
+							<tr>
+									<th>주소</th>
+									<td><!-- 필드를 나눠라 -->
+										<div>
+											<label>
+												<input type="text" name="">
+											</label>
+											<a href="#">우편번호</a>
+										</div>
+										<div>
+											<label>
+												<input type="text" name="" title="주소 입력">
+											</label>
+										</div>
+										<div>
+												<input type="text" name="" title=" 상세주소 입력">											
+										</div>
+										<label>
+											<select name="">
+												<optgroup label="서울특별시">
+													<option>강남구</option>
+												</optgroup><!-- 지역별로 나눌 때 사용 -->
+												<optgroup label="부산특별시">
+													<option>만덕구</option>
+												</optgroup>
+											</select>
+										</label>
+										<label>
+											<input type="text" name="">
+										</label>
+										<label>
+											<input type="text" name="">
+										</label>
+									</td>
+								</tr>
+								<tr>
+										<th>기타 입력</th>
+										<td>
+											<label>
+												<textarea cols="70" rows="7">
+자유롭게 입력해 주세요.
+												</textarea>
+											</label>
+										</td>
+									</tr>					
+			 </tbody>
+			</table>
+			<div>
+					<button type="button">확인</button>
+					<input type="button" value="확인">
+					<input type="submit" value="확인">
+					<input type="image" src="이미지경로" alt="확인">
+					<a href="#">확인</a>
+					<input type="reset" value="초기화">
+				</div>
+		</fieldset>
+
+	 </form><!-- 폼요소로 디자인은 하지말 것 -->
+	 <style>
+		 /*
+		 px, pt, em, %, vw, vh, mm, cm
+		 */
+			*{
+				margin:0;
+				/*
+				margin:0 0 0 0;
+				margin:0 0 0;
+				margin:0 0;
+				margin:0;
+				*/
+				padding:0;
+				color:#222222;
+				font-size:13px;
+				font-family:"맑은 고딕",Dotum;
+				font-weight:normal;
+				font-style:normal;
+				line-height:1; /*행간* 디자인할 때는 초기화 시키는 게 좋음*/
+				list-style:none;
+
+				/*
+				color:#222; 
+				color:#rgb(255,255,255); 
+				color:#rgba(255,255,255,0.5); 
+				*/
+			}
+		</style>
+
+
+	
+	<br>
+	<br>
+	<br>
+<!-- 
+	
+<head>
+		링크 외부문서 불러들이는 방식 linked방식
+		<link rel="stylesheet" type="text/css" href="css경로">
+
+		internal방식
+		<style>  head 안에 사용하기 / html5.2에는 body 안에도 사용될 것 
+			*{
+				margin:0;
+			}
+		</style>
+		
+		임포트 url 방식 / 로딩이 느려서 권장하지 않음
+		<style> 
+			@import url('css경로');
+		</style>
+	</head>
+<body>
+	인라인 스타일 방식 / 자주 사용하면 유지 보수가 어려움/우선순위높음
+	<div style="margin:0;"></div>
+</body>
+
+	overflow / 넘침제어/영역을 넘었을 때 어떻게 사용할건지 
+	overflow-x
+	overflow-y
+
+	visibility / 보이고 안 보이고 하는 역할을 처리함
+	display / 자주 사용됨
+
+	(좌표값)
+	position
+	top
+	right
+	botton
+	left
+	z-index
+
+	(위치조절)
+	float
+	clear
+
+	(boxmodel)
+	width
+	height
+	margin / 바깥여백 / 컨텐츠와 컨텐츠 사이 등 /양수, 음수 사용 가능
+	margin-top
+	margin-ringht
+	margin-bottom
+	margin-left
+	
+	padding: -> 축약형 / 안쪽여백 / 텍스트 사이 등 / 양수, 음수 사용 가능
+	padding-top
+	padding-right
+	padding-bottom
+	padding-left
+
+	border
+	border-color
+	border-width
+	border-style
+	border-top-color
+	border-right-color
+	border-bottom-color
+	border-left-color
+
+	border-top-width
+	border-right-width
+	border-bottom-width
+	border-left-width
+
+	border-top-style
+	border-right-style
+	border-bottom-style
+	border-left-style
+
+	border-radius / 라운드 처리
+
+	(디자인/색상)
+	background
+	background-color
+	background-repeat
+	background-position
+	background-image
+	background-attchment
+	background-size
+
+	(폰트)
+	color
+	font-size
+	font-weight
+	font-family
+	line-height
+
+	text-align
+	vertical-align
+
+	text-transform /대소문자 구분 여부
+	text-decoration
+	text-indent / 들여쓰기, 내여쓰기
+
+	letter-spacing
+	word-spacing
+
+	box-sizing
+	box-shadow
+	text-shadow
+
+	text-overflow
+	white-space
+ -->
+
+
+ 	<h1>제목이다</h1>
+ 	<ul>
+		 <li>css</li>
+		 <li>css</li>
+		 <li>css</li>
+	 </ul>
+	<hr>
+	<style>
+		.box{
+			/* overflow:auto; 넘침 제어 */
+			/* overflow-x:hidden; */
+			/* overflow-y:auto; */
+			/* overflow-x:scroll; */
+			/* overflow-y:auto; 
+			inherit 부모 요소 속성을 받겠다는 의미
+			visible 넘친 영역을 보여줘야 할 때 사용*/
+			overflow:auto;
+
+			width:500px;
+			height:300px;
+			border:1px dotted #222;/*solid, dashed, dotted*/
+		}
+		.a{
+			/* visibility:hidden; 영역은 그대로 두고 숨김 */
+			/* visibility:visible;*/
+			display:none;/* 영역 자체도 숨김 */
+			/* display:block;
+			display:inline;
+			display:inline-block; */
+		}
+	</style>
+ <div class="box a">
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+ </div>
+ <div class="box b">
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+		HTML(Hyper Text Markup Language)은 가장 단순한 형태의 웹 언어이다. 웹 서버에 HTML 문서를 저장하고 있다가 클라이언트가 특정 HTML 페이지를 요청하면 해당 HTML 문서를 클라이언트로 전송한다. 그러면 클라이언트는 이 웹 페이지를 해석하여 웹 브라우저에 표현해 주는데 이런 웹 페이지를 정적인(Static) 웹 페이지라고 한다.
+ </div>
+	<br>
+	<br>
+	<br>
+</body>
+</html>
